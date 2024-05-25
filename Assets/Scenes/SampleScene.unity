@@ -1077,8 +1077,8 @@ GameObject:
   - component: {fileID: 1600954012}
   - component: {fileID: 1600954013}
   - component: {fileID: 1600954014}
-  - component: {fileID: 1600954016}
   - component: {fileID: 1600954015}
+  - component: {fileID: 1600954016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1160,9 +1160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600954011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 110167482068f4b419c3fb47ae87ce88, type: 3}
+  m_Script: {fileID: 11500000, guid: a6a6a120f8d04824ab1cb4cfacd5e9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  anim: {fileID: 0}
-  step: 0
+  Speed: 30

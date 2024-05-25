@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    private Animator UpAnim;
-    private Animator DownAnim;
+    private Animator upAnim;
+    private Animator downAnim;
 
     void Start()
     {
-        UpAnim = transform.Find("UP").GetComponent<Animator>();
-        DownAnim = transform.Find("Down").GetComponent<Animator>();
+        upAnim = transform.Find("UP").GetComponent<Animator>();
+        downAnim = transform.Find("Down").GetComponent<Animator>();
     }
 
     public void PlayIdle()
     {
-        UpAnim.SetBool("Walk", false);
-        DownAnim.SetBool("Walk", false);
+        upAnim.SetBool("Walk", false);
+        downAnim.SetBool("Walk", false);
         PlaySquats(false);
+        upAnim.SetBool("Up", false);
     }
 
     public void PlayeWalk()
     {
-        UpAnim.SetBool("Walk", true);
-        DownAnim.SetBool("Walk", true);
+        upAnim.SetBool("Walk", true);
+        downAnim.SetBool("Walk", true);
         PlaySquats(false);
+        upAnim.SetBool("Up", false);
     }
 
     /// <summary>
@@ -32,8 +34,8 @@ public class PlayerAnim : MonoBehaviour
     /// </summary>
     public void PlaySquats(bool state)
     {
-        UpAnim.SetBool("Squat", state);
-        DownAnim.SetBool("Squat", state);
+        upAnim.SetBool("Squat", state);
+        downAnim.SetBool("Squat", state);
     }
 
     /// <summary>
@@ -41,8 +43,8 @@ public class PlayerAnim : MonoBehaviour
     /// </summary>
     public void PlayeJump()
     {
-        UpAnim.SetTrigger("Jump");
-        DownAnim.SetTrigger("Jump");
+        upAnim.SetTrigger("Jump");
+        downAnim.SetTrigger("Jump");
     }
 
     /// <summary>
@@ -50,8 +52,8 @@ public class PlayerAnim : MonoBehaviour
     /// </summary>
     public void PlayDie()
     {
-        UpAnim.gameObject.SetActive(false);
-        DownAnim.SetTrigger("Die");
+        upAnim.gameObject.SetActive(false);
+        downAnim.SetTrigger("Die");
     }
 
     /// <summary>
@@ -59,8 +61,8 @@ public class PlayerAnim : MonoBehaviour
     /// </summary>
     public void PlayResurgence()
     {
-        UpAnim.gameObject.SetActive(true);
-        DownAnim.SetTrigger("Resurgence");
+        upAnim.gameObject.SetActive(true);
+        downAnim.SetTrigger("Resurgence");
     }
 
     /// <summary>
@@ -69,44 +71,44 @@ public class PlayerAnim : MonoBehaviour
     /// <param name="isWalking">是否奔跑</param>
     public void PlayeAttack(bool isWalking)
     {
-        UpAnim.SetTrigger("Attack");
-        DownAnim.SetBool("Walk", isWalking);
+        upAnim.SetTrigger("Attack");
+        downAnim.SetBool("Walk", isWalking);
     }
 
     /// <summary>
     /// 蹲着走
     /// </summary>
-    public void PlaySquatWalk()
+    public void PlaySquatsWalk()
     {
-        UpAnim.SetBool("Squat", true);
-        DownAnim.SetBool("SquatWalk", true);
+        upAnim.SetBool("Squat", true);
+        downAnim.SetBool("SquatWalk", true);
     }
 
     /// <summary>
     /// 蹲着丢手雷
     /// </summary>
-    public void PlaySquatThrow()
+    public void PlaySquatsThrow()
     {
-        UpAnim.SetTrigger("SquatAttack");
+        upAnim.SetTrigger("SquatAttack");
     }
 
     /// <summary>
     /// 蹲着攻击
     /// </summary>
-    public void PlaySquatAttack()
+    public void PlaySquatsAttack()
     {
-        UpAnim.SetTrigger("SquatThrow");
+        upAnim.SetTrigger("SquatThrow");
     }
 
     /// <summary>
     /// 往上看
     /// </summary>
-    public void PlayUpLook(bool isWalking, bool upLook)
+    public void PlayUpLook(bool isWalking)
     {
-        UpAnim.SetBool("Up", upLook);
-        DownAnim.SetBool("Walk", isWalking);
+        upAnim.SetBool("Up", true);
+        downAnim.SetBool("Walk", isWalking);
         PlaySquats(false);
-        DownAnim.SetBool("SquatWalk", false);
+        downAnim.SetBool("SquatWalk", false);
     }
 
     /// <summary>
@@ -115,10 +117,10 @@ public class PlayerAnim : MonoBehaviour
     /// <param name="isWalking">是否奔跑</param>
     public void PlayShootUp(bool isWalking)
     {
-        UpAnim.SetTrigger("ShootUp");
-        DownAnim.SetBool("Walk", isWalking);
+        upAnim.SetTrigger("ShootUp");
+        downAnim.SetBool("Walk", isWalking);
         PlaySquats(false);
-        DownAnim.SetBool("SquatWalk", false);
+        downAnim.SetBool("SquatWalk", false);
     }
 
     /// <summary>
@@ -126,8 +128,8 @@ public class PlayerAnim : MonoBehaviour
     /// </summary>
     public void PlayThrow(bool isWalking)
     {
-        UpAnim.SetBool("Up", false);
-        UpAnim.SetTrigger("Throw");
-        DownAnim.SetBool("Walk", isWalking);
+        upAnim.SetBool("Up", false);
+        upAnim.SetTrigger("Throw");
+        downAnim.SetBool("Walk", isWalking);
     }
 }
