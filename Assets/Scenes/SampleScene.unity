@@ -639,8 +639,9 @@ GameObject:
   m_Component:
   - component: {fileID: 819608625}
   - component: {fileID: 819608626}
+  - component: {fileID: 819608627}
   m_Layer: 0
-  m_Name: Body
+  m_Name: UP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,6 +712,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &819608627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819608624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 805a2666165a7604aae08b1b2b735c53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &894654397
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +743,7 @@ GameObject:
   - component: {fileID: 894654399}
   - component: {fileID: 894654401}
   - component: {fileID: 894654398}
+  - component: {fileID: 894654402}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -840,6 +861,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34431368, y: 0.75}
   m_EdgeRadius: 0
+--- !u!50 &894654402
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894654397}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &940352242
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,8 +974,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1266591665}
   - component: {fileID: 1266591666}
+  - component: {fileID: 1266591667}
   m_Layer: 0
-  m_Name: foot
+  m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,6 +1047,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1266591667
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266591664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b820fc69649165b4d83bc03bd595dc07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1600954011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1077,8 @@ GameObject:
   - component: {fileID: 1600954012}
   - component: {fileID: 1600954013}
   - component: {fileID: 1600954014}
+  - component: {fileID: 1600954016}
+  - component: {fileID: 1600954015}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1075,3 +1139,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1600954015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600954011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cab349985bfe754a99e61b0676144e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1600954016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600954011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110167482068f4b419c3fb47ae87ce88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  anim: {fileID: 0}
+  step: 0
